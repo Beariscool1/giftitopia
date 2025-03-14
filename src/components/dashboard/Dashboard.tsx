@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { MotionCard } from "@/components/ui/motion-card";
 import { Button } from "@/components/ui/button";
@@ -148,9 +149,11 @@ const Dashboard = () => {
                 </div>
               ))}
             </div>
-            <Button variant="ghost" size="sm" className="mt-4 w-full justify-center">
-              View All Scheduled Gifts <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link to="/scheduled-gifts">
+              <Button variant="ghost" size="sm" className="mt-4 w-full justify-center">
+                View All Scheduled Gifts <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </CardContent>
         </MotionCard>
 
