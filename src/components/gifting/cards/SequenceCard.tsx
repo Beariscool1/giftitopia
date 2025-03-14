@@ -1,9 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MotionCard } from "@/components/ui/motion-card";
-import { Gift, Clock } from "lucide-react";
+import { Gift, Clock, ImageOff } from "lucide-react";
 import { GiftSequence } from "../types";
 
 interface SequenceCardProps {
@@ -11,14 +11,23 @@ interface SequenceCardProps {
 }
 
 export const SequenceCard: React.FC<SequenceCardProps> = ({ sequence }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <MotionCard key={sequence.id} hoverEffect="lift">
       <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-        <img 
-          src={sequence.image} 
-          alt={sequence.name} 
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-        />
+        {!imageError ? (
+          <img 
+            src={sequence.image} 
+            alt={sequence.name} 
+            className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-secondary">
+            <ImageOff className="h-12 w-12 text-muted-foreground" />
+          </div>
+        )}
         {sequence.popular && (
           <div className="absolute top-3 left-3">
             <span className="px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">

@@ -1,9 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MotionCard } from "@/components/ui/motion-card";
-import { Gift } from "lucide-react";
+import { Gift, ImageOff } from "lucide-react";
 import { GiftOption } from "../types";
 
 interface GiftOptionCardProps {
@@ -11,14 +11,23 @@ interface GiftOptionCardProps {
 }
 
 export const GiftOptionCard: React.FC<GiftOptionCardProps> = ({ gift }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <MotionCard key={gift.id} hoverEffect="lift">
       <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-        <img 
-          src={gift.image} 
-          alt={gift.name} 
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-        />
+        {!imageError ? (
+          <img 
+            src={gift.image} 
+            alt={gift.name} 
+            className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-secondary">
+            <ImageOff className="h-12 w-12 text-muted-foreground" />
+          </div>
+        )}
         <div className="absolute top-3 left-3 flex flex-wrap gap-1">
           {gift.tags.map((tag, index) => (
             <span 
