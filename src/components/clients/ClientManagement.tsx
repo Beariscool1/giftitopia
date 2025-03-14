@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { 
   Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
@@ -8,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Users, UserPlus, Search, Gift, Package, Calendar, Mail, ArrowRight } from "lucide-react";
+import { Users, UserPlus, Search, Gift, Package, Calendar, Mail, ArrowRight, Check } from "lucide-react";
 
 const ClientManagement = () => {
   const [searchTerm, setSearchTerm] = useState("");

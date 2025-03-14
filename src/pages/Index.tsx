@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Gift, Clock, Users, Calendar, ArrowRight, Check } from "lucide-react";
+import { Gift, Clock, Users, Calendar, ArrowRight, Check, Mail, Package } from "lucide-react";
 
 const Index = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -15,7 +14,6 @@ const Index = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  // Animation on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollElements = document.querySelectorAll('[data-scroll]');
@@ -328,7 +326,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="bg-primary/5 rounded-2xl p-8 md:p-12 lg:p-16 relative overflow-hidden border" data-scroll>
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full transform translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full transform -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full transform -translate-x-1/3 translate-y-1/2 blur-3xl"></div>
             
             <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div className="max-w-lg">
@@ -385,3 +383,4 @@ const Index = () => {
 };
 
 export default Index;
+
