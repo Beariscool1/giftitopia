@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
-import { Gift, LayoutDashboard, Users, Menu, X } from "lucide-react";
+import { Gift, LayoutDashboard, Users, Menu, X, Home, Clock } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Dashboard", href: "/dashboard", icon: <LayoutDashboard className="h-4 w-4 mr-1" /> },
-    { label: "Gifting", href: "/gifting", icon: <Gift className="h-4 w-4 mr-1" /> },
+    { label: "Gift Sequences", href: "/gifting", icon: <Gift className="h-4 w-4 mr-1" /> },
     { label: "Clients", href: "/clients", icon: <Users className="h-4 w-4 mr-1" /> },
   ];
 
@@ -48,9 +48,9 @@ const Navbar = () => {
           className="flex items-center space-x-2 relative"
         >
           <div className="bg-primary/10 p-2 rounded-xl">
-            <Gift className="h-5 w-5 text-primary" />
+            <Home className="h-5 w-5 text-primary" />
           </div>
-          <span className="font-bold text-xl tracking-tight">Giftitopia</span>
+          <span className="font-bold text-xl tracking-tight">Bespoke Mindful Gifts</span>
         </Link>
 
         {/* Desktop Navigation */}

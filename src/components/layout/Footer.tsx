@@ -2,28 +2,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Gift } from "lucide-react";
+import { Gift, Home } from "lucide-react";
 
 const Footer = ({ className }: { className?: string }) => {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
     {
-      title: "Product",
+      title: "Gift Sequences",
       links: [
-        { label: "Features", href: "#features" },
-        { label: "How it Works", href: "#how-it-works" },
-        { label: "Pricing", href: "#pricing" },
-        { label: "FAQs", href: "#faqs" },
+        { label: "Closing Gifts", href: "/gifting?type=closing" },
+        { label: "Follow-up Sequences", href: "/gifting?type=followup" },
+        { label: "Anniversary Gifts", href: "/gifting?type=anniversary" },
+        { label: "Customization", href: "/gifting?type=custom" },
       ],
     },
     {
-      title: "Company",
+      title: "For Agents",
       links: [
-        { label: "About Us", href: "/about" },
-        { label: "Careers", href: "/careers" },
-        { label: "Blog", href: "/blog" },
-        { label: "Contact", href: "/contact" },
+        { label: "How It Works", href: "/#how-it-works" },
+        { label: "Success Stories", href: "/success-stories" },
+        { label: "ROI Calculator", href: "/roi-calculator" },
+        { label: "CRM Integration", href: "/integrations" },
       ],
     },
     {
@@ -43,13 +43,13 @@ const Footer = ({ className }: { className?: string }) => {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="bg-primary/10 p-2 rounded-xl">
-                <Gift className="h-5 w-5 text-primary" />
+                <Home className="h-5 w-5 text-primary" />
               </div>
-              <span className="font-bold text-xl tracking-tight">Giftitopia</span>
+              <span className="font-bold text-xl tracking-tight">Bespoke Mindful Gifts</span>
             </Link>
             <p className="text-muted-foreground max-w-md">
-              Enhance client relationships with automated, personalized gifting. 
-              Strengthen your brand and increase referrals effortlessly.
+              Strengthen client relationships with thoughtfully curated, automated real estate closing gifts and follow-up sequences. 
+              Turn transactions into lasting connections.
             </p>
           </div>
           
@@ -74,7 +74,7 @@ const Footer = ({ className }: { className?: string }) => {
         
         <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {currentYear} Giftitopia. All rights reserved.
+            &copy; {currentYear} Bespoke Mindful Gifts. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
