@@ -1,10 +1,11 @@
+
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Gift, Clock, Users, Calendar, ArrowRight, Check, Mail, Package } from "lucide-react";
+import { Gift, Clock, Users, Calendar, ArrowRight, Check, Mail, Package, Home, MapPin, Heart } from "lucide-react";
 
 const Index = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,28 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Real estate testimonials
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "Real Estate Agent, Century 21",
+      comment: "Bespoke Mindful Gifts has transformed my client relationships. My repeat business has increased by 40% since I started using their gift sequences.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "Broker, Keller Williams",
+      comment: "The automation saves me hours each week while making my clients feel special. It's the perfect balance of personal touch and efficiency.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      name: "Jennifer Chen",
+      role: "Luxury Property Specialist",
+      comment: "My high-end clients expect exceptional service. These thoughtful gift sequences have become a signature part of my premium offering.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -44,13 +67,13 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-8">
             <div className="md:w-1/2 space-y-6 z-10">
               <div className="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent-foreground mb-2">
-                Strengthen client relationships
+                Build lasting client relationships
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                Automate your client gifting experience
+                Mindful closing gifts that leave lasting impressions
               </h1>
               <p className="text-xl text-muted-foreground max-w-md">
-                Never miss a gifting opportunity. Build stronger relationships and increase referrals with personalized, automated gift sending.
+                Build stronger client relationships with beautiful, personalized gifts automatically sent at closing and throughout the homeownership journey.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="text-md">
@@ -67,17 +90,18 @@ const Index = () => {
               </div>
               <div className="pt-4 flex items-center space-x-4 text-sm">
                 <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div 
-                      key={i} 
-                      className={`w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-xs font-medium bg-primary-${i * 100} text-primary-foreground`}
-                    >
-                      {String.fromCharCode(65 + i)}
+                  {testimonials.map((testimonial, i) => (
+                    <div key={i} className="w-8 h-8 rounded-full border-2 border-background overflow-hidden">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
                 <p className="text-muted-foreground">
-                  <span className="font-medium text-foreground">500+</span> agents already using Giftitopia
+                  <span className="font-medium text-foreground">500+</span> agents already using Bespoke Mindful Gifts
                 </p>
               </div>
             </div>
@@ -112,7 +136,7 @@ const Index = () => {
                   <div className="relative z-20 bg-card border rounded-xl p-6 shadow-soft mb-6 transform transition-transform hover:rotate-1 hover:scale-[1.01] duration-500 ml-6">
                     <div className="flex items-center mb-4">
                       <div className="p-2 rounded-full bg-blue-50 mr-3">
-                        <Calendar className="h-5 w-5 text-blue-500" />
+                        <Home className="h-5 w-5 text-blue-500" />
                       </div>
                       <div>
                         <h3 className="font-medium">Anniversary Gift • 1 Year</h3>
@@ -138,9 +162,15 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-3 gap-2 mt-2">
-                      <div className="h-12 rounded-md bg-secondary"></div>
-                      <div className="h-12 rounded-md bg-secondary"></div>
-                      <div className="h-12 rounded-md bg-secondary"></div>
+                      <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568213214202-aee0a28567f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -164,9 +194,9 @@ const Index = () => {
             <div className="inline-block rounded-full bg-secondary px-3 py-1 text-sm font-medium text-muted-foreground mb-4">
               Key Features
             </div>
-            <h2 className="section-title mb-4">Everything you need for client gifting</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Exceptional client gifting for real estate professionals</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Streamline your client gifting workflow with powerful automation tools designed specifically for real estate professionals.
+              Create memorable experiences for your clients at every touchpoint with thoughtfully curated gifts and seamless automation.
             </p>
           </div>
           
@@ -175,20 +205,34 @@ const Index = () => {
               <div className="p-3 rounded-xl bg-primary/10 inline-block mb-4">
                 <Gift className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Automated Gifting</h3>
+              <h3 className="text-xl font-bold mb-2">Closing Gift Sequences</h3>
               <p className="text-muted-foreground">
-                Schedule gifts ahead of time to be sent automatically on important dates like closing day, anniversaries, and holidays.
+                Create lasting impressions with beautiful closing gifts followed by thoughtful follow-ups at 3, 6, and 12 months.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Closing gift" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
               <div className="p-3 rounded-xl bg-primary/10 inline-block mb-4">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">CRM Integration</h3>
+              <h3 className="text-xl font-bold mb-2">Smart Scheduling</h3>
               <p className="text-muted-foreground">
-                Seamlessly connects with Dotloop, Bullseye, and other popular real estate CRM systems to sync client data.
+                Set-and-forget gift timing based on closing dates, with automatic tracking and delivery notifications.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1584208124218-703c2daf0008?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Smart scheduling" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
@@ -197,8 +241,15 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Client Management</h3>
               <p className="text-muted-foreground">
-                Keep track of client preferences, special dates, and gifting history in one centralized platform.
+                Organize all your client property purchases and track their gifting journey in one centralized dashboard.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Client management" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
@@ -207,8 +258,15 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Personalized Notes</h3>
               <p className="text-muted-foreground">
-                Include custom handwritten-style notes with each gift to add a personal touch that clients will remember.
+                Include handwritten-style notes with each gift that feel personal and authentic to strengthen connections.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1579208030886-b937da9925dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Personalized notes" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
@@ -217,18 +275,32 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Premium Gift Catalog</h3>
               <p className="text-muted-foreground">
-                Choose from a curated selection of high-quality gifts that make a lasting impression on your clients.
+                Select from thoughtfully curated gift options specifically chosen to delight new homeowners.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1568213214202-aee0a28567f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Premium gift catalog" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             
             <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
               <div className="p-3 rounded-xl bg-primary/10 inline-block mb-4">
-                <Calendar className="h-6 w-6 text-primary" />
+                <Heart className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Gift Scheduling</h3>
+              <h3 className="text-xl font-bold mb-2">Memorable Touchpoints</h3>
               <p className="text-muted-foreground">
-                Plan your client touchpoints years in advance, ensuring no important date or opportunity is missed.
+                Create lasting connections that generate more referrals, reviews, and repeat business.
               </p>
+              <div className="mt-4 h-32 rounded-lg overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1513135467880-6c41603e3d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Memorable touchpoints" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -245,9 +317,9 @@ const Index = () => {
             <div className="inline-block rounded-full bg-background px-3 py-1 text-sm font-medium text-muted-foreground mb-4">
               Simple Process
             </div>
-            <h2 className="section-title mb-4">How Giftitopia works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Bespoke Mindful Gifts works</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Three simple steps to transform your client relationships with automated gifting.
+              Three simple steps to transform your client relationships with thoughtful, automated gifting.
             </p>
           </div>
           
@@ -255,18 +327,25 @@ const Index = () => {
             <div className="relative" data-scroll>
               <div className="bg-background rounded-xl p-8 h-full border relative z-10">
                 <div className="absolute -top-6 -left-2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">1</div>
-                <h3 className="text-xl font-bold mb-4 mt-4">Connect your CRM</h3>
+                <h3 className="text-xl font-bold mb-4 mt-4">Add your clients</h3>
                 <p className="text-muted-foreground mb-4">
-                  Easily integrate with your existing CRM system to import client data and important dates.
+                  Enter your client details and property information after each closing to start the gifting journey.
                 </p>
+                <div className="mt-4 h-40 rounded-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Add clients" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="mt-auto pt-4">
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Automatic data sync</span>
+                    <span>Easy client import</span>
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground mt-2">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Works with popular CRMs</span>
+                    <span>CRM integration</span>
                   </div>
                 </div>
               </div>
@@ -278,18 +357,25 @@ const Index = () => {
             <div className="relative" data-scroll>
               <div className="bg-background rounded-xl p-8 h-full border relative z-10">
                 <div className="absolute -top-6 -left-2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">2</div>
-                <h3 className="text-xl font-bold mb-4 mt-4">Select gifts & occasions</h3>
+                <h3 className="text-xl font-bold mb-4 mt-4">Select gift sequence</h3>
                 <p className="text-muted-foreground mb-4">
-                  Choose from our premium gift catalog and set up automations for important client milestones.
+                  Choose a curated gift sequence that delivers the perfect gifts at closing, 3, 6, and 12 months after.
                 </p>
+                <div className="mt-4 h-40 rounded-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Select gifts" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="mt-auto pt-4">
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Curated gift options</span>
+                    <span>Thoughtfully curated</span>
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground mt-2">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Customizable templates</span>
+                    <span>Customizable</span>
                   </div>
                 </div>
               </div>
@@ -301,22 +387,65 @@ const Index = () => {
             <div data-scroll>
               <div className="bg-background rounded-xl p-8 h-full border relative z-10">
                 <div className="absolute -top-6 -left-2 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">3</div>
-                <h3 className="text-xl font-bold mb-4 mt-4">Relax & build relationships</h3>
+                <h3 className="text-xl font-bold mb-4 mt-4">Let us handle the rest</h3>
                 <p className="text-muted-foreground mb-4">
-                  We handle the logistics - you focus on growing your business while we strengthen your client relationships.
+                  We'll automatically deliver each gift at the perfect time while you build your business and client relationships.
                 </p>
+                <div className="mt-4 h-40 rounded-lg overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                    alt="Automated delivery" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="mt-auto pt-4">
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Automatic delivery</span>
+                    <span>Fully automated</span>
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground mt-2">
                     <Check className="text-green-500 mr-2 h-4 w-4" />
-                    <span>Track client engagement</span>
+                    <span>Delivery tracking</span>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16" data-scroll>
+            <div className="inline-block rounded-full bg-secondary px-3 py-1 text-sm font-medium text-muted-foreground mb-4">
+              Agent Success Stories
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What real estate professionals are saying</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Hear from agents who have transformed their client relationships with Bespoke Mindful Gifts.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-card border rounded-xl p-8 shadow-soft" data-scroll>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                    <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">"{testimonial.comment}"</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -331,10 +460,10 @@ const Index = () => {
             <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div className="max-w-lg">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                  Ready to transform your client relationships?
+                  Ready to impress your clients?
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Join hundreds of successful agents who are building stronger client connections and increasing referrals with Giftitopia.
+                  Join hundreds of successful agents building stronger client connections and increasing referrals with Bespoke Mindful Gifts.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="text-md">
@@ -353,7 +482,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="font-medium">Agent Success</h3>
-                    <p className="text-sm text-muted-foreground">Results with Giftitopia</p>
+                    <p className="text-sm text-muted-foreground">Results with Bespoke Mindful Gifts</p>
                   </div>
                 </div>
                 
@@ -383,4 +512,3 @@ const Index = () => {
 };
 
 export default Index;
-
