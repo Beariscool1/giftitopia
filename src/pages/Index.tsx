@@ -7,7 +7,7 @@ import FeaturesSection from "@/pages/home/FeaturesSection";
 import HowItWorksSection from "@/pages/home/HowItWorksSection";
 import TestimonialsSection from "@/pages/home/TestimonialsSection";
 import CTASection from "@/pages/home/CTASection";
-import ScrollAnimation from "@/pages/home/ScrollAnimation";
+import { useScrollAnimation } from "@/pages/home/ScrollAnimation";
 
 // Sample data for testimonials
 const testimonials = [
@@ -40,6 +40,9 @@ const testimonialPreviews = testimonials.map(t => ({
 
 const Index = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
+  
+  // Use the ScrollAnimation hook
+  useScrollAnimation();
 
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -60,7 +63,6 @@ const Index = () => {
         <TestimonialsSection testimonials={testimonials} />
         <CTASection />
       </main>
-      <ScrollAnimation />
       <Footer />
     </div>
   );

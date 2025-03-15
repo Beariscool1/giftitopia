@@ -2,10 +2,9 @@
 import React from "react";
 import { ArrowRight, Check } from "lucide-react";
 
-const HowItWorksSection: React.FC<React.RefObject<HTMLDivElement>> = (ref) => {
+const HowItWorksSection: React.FC = () => {
   return (
     <section 
-      ref={ref}
       className="py-24 px-4 bg-secondary/50"
       id="how-it-works"
     >
