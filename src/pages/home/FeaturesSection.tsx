@@ -40,7 +40,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Users className="h-6 w-6 text-primary" />}
             title="Client Management"
             description="Organize all your client property purchases and track their gifting journey in one centralized dashboard."
-            image="https://images.unsplash.com/photo-1576177565809-ef9728c99e21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             alt="Client management"
           />
           
@@ -84,8 +84,6 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, image, alt }) => {
   const [imageError, setImageError] = useState(false);
   
-  const fallbackImage = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-  
   return (
     <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
       <div className="p-3 rounded-xl bg-primary/10 inline-block mb-4">
@@ -104,8 +102,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ima
             onError={() => setImageError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-secondary">
-            <UsersIcon className="h-12 w-12 text-primary/70" />
+          <div className="w-full h-full flex items-center justify-center bg-primary/5">
+            <UsersIcon className="h-12 w-12 text-primary" />
           </div>
         )}
       </div>
