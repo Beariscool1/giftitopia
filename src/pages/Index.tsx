@@ -9,25 +9,25 @@ import TestimonialsSection from "@/pages/home/TestimonialsSection";
 import CTASection from "@/pages/home/CTASection";
 import { useScrollAnimation } from "@/pages/home/ScrollAnimation";
 
-// Sample data for testimonials
+// Sample data for testimonials with more reliable image sources
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Real Estate Agent, Seattle",
     comment: "Since using Bestow Mindful Gifts, my client retention rate has doubled. The personalized gifts make such an impression that I get calls of thanks months after closing!",
-    image: "https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-reviews-profile-1.jpg"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   },
   {
     name: "Michael Rodriguez",
     role: "Broker, Miami",
     comment: "The automations save me so much time, and the gifts themselves are beautiful. My clients love receiving them throughout their homeownership journey.",
-    image: "https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-reviews-profile-2.jpg"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   },
   {
     name: "Rachel Kim",
     role: "Luxury Properties, Los Angeles",
     comment: "My high-end clients have very specific tastes, and Bestow's curated selections have impressed even my most discerning buyers. Worth every penny.",
-    image: "https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-reviews-profile-3.jpg"
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   }
 ];
 

@@ -1,5 +1,6 @@
 
-import React from "react";
+import React, { useState } from "react";
+import { ImageOff } from "lucide-react";
 
 interface Testimonial {
   name: string;
@@ -28,26 +29,51 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-card border rounded-xl p-8 shadow-soft" data-scroll>
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                  <p className="text-muted-foreground text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground">"{testimonial.comment}"</p>
-            </div>
+            <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+interface TestimonialCardProps {
+  testimonial: Testimonial;
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  // Fallback image
+  const fallbackImage = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80";
+  
+  return (
+    <div className="bg-card border rounded-xl p-8 shadow-soft" data-scroll>
+      <div className="flex items-center mb-6">
+        <div className="w-16 h-16 rounded-full overflow-hidden mr-4 bg-secondary flex items-center justify-center">
+          {!imageError ? (
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.name} 
+              className="w-full h-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <img 
+              src={fallbackImage}
+              alt={testimonial.name} 
+              className="w-full h-full object-cover"
+              onError={() => <ImageOff className="h-8 w-8 text-muted-foreground" />}
+            />
+          )}
+        </div>
+        <div>
+          <h3 className="font-bold text-lg">{testimonial.name}</h3>
+          <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+        </div>
+      </div>
+      <p className="text-muted-foreground">"{testimonial.comment}"</p>
+    </div>
   );
 };
 
