@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Gift, Clock, Users, Mail, Package, Heart, Users as UsersIcon } from "lucide-react";
 
@@ -40,8 +39,8 @@ const FeaturesSection: React.FC = () => {
             icon={<Users className="h-6 w-6 text-primary" />}
             title="Client Management"
             description="Organize all your client property purchases and track their gifting journey in one centralized dashboard."
-            image="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Client management"
+            image="/dashboard-preview.png"
+            alt="Client management dashboard"
           />
           
           <FeatureCard 
@@ -103,7 +102,28 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ima
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-primary/5">
-            <UsersIcon className="h-12 w-12 text-primary" />
+            {title === "Client Management" ? (
+              <div className="flex flex-col items-center justify-center w-full h-full bg-gray-50 p-2">
+                <div className="w-full flex justify-between items-center mb-2 p-1 bg-white rounded shadow-sm">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mr-2">
+                      <UsersIcon className="h-3 w-3 text-primary" />
+                    </div>
+                    <div className="h-2 w-16 bg-gray-200 rounded-full"></div>
+                  </div>
+                  <div className="h-2 w-8 bg-primary/30 rounded-full"></div>
+                </div>
+                <div className="grid grid-cols-3 gap-1 w-full">
+                  {[1, 2, 3, 4, 5, 6].map(i => (
+                    <div key={i} className="h-4 bg-white rounded shadow-sm p-1">
+                      <div className="h-2 w-full bg-gray-100 rounded-full"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <UsersIcon className="h-12 w-12 text-primary" />
+            )}
           </div>
         )}
       </div>
