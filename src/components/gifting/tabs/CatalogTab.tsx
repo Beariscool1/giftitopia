@@ -4,7 +4,7 @@ import { GiftOption } from "../types";
 import { GiftOptionCard } from "../cards/GiftOptionCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Tag, Search, Filter, Database } from "lucide-react";
+import { Tag, Search, Filter, Database, Package } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CRMIntegrationSettings } from "../crm/CRMIntegrationSettings";
