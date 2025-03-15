@@ -288,7 +288,7 @@ const GiftAutomation = () => {
         </TabsContent>
 
         <TabsContent value="catalog">
-          <CatalogTab giftOptions={giftOptions} />
+          <CatalogTab giftOptions={giftOptions} activeSequences={activeSequences} />
         </TabsContent>
 
         <TabsContent value="active">

@@ -54,3 +54,55 @@ export interface ActiveSequence {
     message?: string;
   };
 }
+
+// CRM Integration Types
+export interface CRMContact {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  address?: string;
+  notes?: string;
+  tags?: string[];
+  crmId?: string;
+  crmSystem?: string;
+}
+
+export interface CRMIntegrationConfig {
+  name: string;
+  apiKey?: string;
+  baseUrl?: string;
+  enabled: boolean;
+  lastSyncedAt?: string;
+  mappings?: {
+    contactField: string;
+    bestowField: string;
+  }[];
+}
+
+export interface CRMSyncStatus {
+  success: boolean;
+  message: string;
+  timestamp: string;
+  details?: {
+    added: number;
+    updated: number;
+    failed: number;
+    failedIds?: string[];
+  };
+}
+
+export interface CRMExportData {
+  clients: CRMContact[];
+  sequences: Array<{
+    clientId: string;
+    sequenceId: string;
+    sequenceName: string;
+    startDate: string;
+    gifts: {
+      name: string;
+      scheduledDate: string;
+      status: string;
+    }[];
+  }>;
+}
