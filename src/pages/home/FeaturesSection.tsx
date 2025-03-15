@@ -1,5 +1,6 @@
+
 import React, { useState } from "react";
-import { Gift, Clock, Users, Mail, Package, Heart, Users as UsersIcon } from "lucide-react";
+import { Gift, Clock, Users, Mail, Package, Heart, Users as UsersIcon, Pen } from "lucide-react";
 
 const FeaturesSection: React.FC = () => {
   return (
@@ -44,7 +45,7 @@ const FeaturesSection: React.FC = () => {
           />
           
           <FeatureCard 
-            icon={<Mail className="h-6 w-6 text-primary" />}
+            icon={<Pen className="h-6 w-6 text-primary" />}
             title="Personalized Notes"
             description="Include handwritten-style notes with each gift that feel personal and authentic to strengthen connections."
             image="https://images.unsplash.com/photo-1543357230-5f6db27346a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -119,6 +120,28 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ima
                       <div className="h-2 w-full bg-gray-100 rounded-full"></div>
                     </div>
                   ))}
+                </div>
+              </div>
+            ) : title === "Personalized Notes" ? (
+              <div className="flex flex-col items-center justify-center w-full h-full bg-gray-50 p-3">
+                <div className="w-full bg-white rounded shadow-sm p-2 mb-2">
+                  <div className="flex items-center mb-2">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mr-2">
+                      <Pen className="h-3 w-3 text-primary" />
+                    </div>
+                    <div className="h-2 w-24 bg-primary/20 rounded-full"></div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="h-1.5 w-full bg-gray-100 rounded-full"></div>
+                    <div className="h-1.5 w-5/6 bg-gray-100 rounded-full"></div>
+                    <div className="h-1.5 w-4/6 bg-gray-100 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="w-2/3 self-end bg-primary/10 rounded shadow-sm p-1.5">
+                  <div className="flex justify-end">
+                    <div className="h-2 w-16 bg-primary/20 rounded-full mb-1"></div>
+                  </div>
+                  <div className="h-1.5 w-full bg-gray-100 rounded-full"></div>
                 </div>
               </div>
             ) : (
