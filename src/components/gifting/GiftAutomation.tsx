@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Clock, Package, Calendar } from "lucide-react";
+import { Clock, Package, Calendar, Tag } from "lucide-react";
 import { SequencesTab } from "./tabs/SequencesTab";
 import { CatalogTab } from "./tabs/CatalogTab";
 import { ActiveSequencesTab } from "./tabs/ActiveSequencesTab";
@@ -68,6 +67,21 @@ const GiftAutomation = () => {
       ],
       popular: false,
     },
+    {
+      id: "sequence5",
+      name: "Branded Luxury Welcome",
+      description: "Custom-branded premium closing gifts that showcase your brand.",
+      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+      price: "$395",
+      included: [
+        { time: "At Closing", gift: "Branded Luxury Gift Box" },
+        { time: "3-Month", gift: "Branded Thank You Card" },
+        { time: "6-Month", gift: "Branded Wine Set" },
+        { time: "1-Year", gift: "Premium Branded Anniversary Gift" },
+      ],
+      popular: false,
+      branded: true,
+    },
   ];
 
   // Individual gift options for catalog
@@ -126,6 +140,63 @@ const GiftAutomation = () => {
       category: "Anniversary",
       tags: ["Premium"],
     },
+    {
+      id: "gift7",
+      name: "Custom Logo Gift Box",
+      description: "Premium gift box with your branding and choice of items.",
+      price: "$130",
+      image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+      category: "Branded",
+      tags: ["Premium", "Customizable"],
+      brandable: true,
+      brandingOptions: [
+        { id: "b1", name: "Embossed Logo", description: "Embossed logo on box", additionalCost: "+$10" },
+        { id: "b2", name: "Custom Insert", description: "Custom message insert", additionalCost: "+$5" },
+        { id: "b3", name: "Color Options", description: "Brand color palette", additionalCost: "+$15" },
+      ]
+    },
+    {
+      id: "gift8",
+      name: "Branded Wine Set",
+      description: "Premium wine set with custom labels featuring your brand.",
+      price: "$160",
+      image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+      category: "Branded",
+      tags: ["Luxury", "Memorable"],
+      brandable: true,
+      brandingOptions: [
+        { id: "b4", name: "Custom Labels", description: "Custom wine labels", additionalCost: "+$20" },
+        { id: "b5", name: "Branded Box", description: "Branded presentation box", additionalCost: "+$15" },
+      ]
+    },
+    {
+      id: "gift9",
+      name: "Customized Cutting Board",
+      description: "Hardwood cutting board with laser-engraved branding.",
+      price: "$85",
+      image: "https://images.unsplash.com/photo-1584753388888-32e613cb3b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+      category: "Kitchen",
+      tags: ["Personalized", "Eco-Friendly"],
+      brandable: true,
+      brandingOptions: [
+        { id: "b6", name: "Logo Engraving", description: "Laser-engraved logo", additionalCost: "+$10" },
+        { id: "b7", name: "Custom Message", description: "Personal message", additionalCost: "+$5" },
+      ]
+    },
+    {
+      id: "gift10",
+      name: "Branded Luxury Throw",
+      description: "Premium throw blanket with subtle logo embroidery.",
+      price: "$110",
+      image: "https://images.unsplash.com/photo-1584346475448-38e1a66671af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+      category: "Home",
+      tags: ["Cozy", "Premium"],
+      brandable: true,
+      brandingOptions: [
+        { id: "b8", name: "Logo Embroidery", description: "Subtle logo embroidery", additionalCost: "+$15" },
+        { id: "b9", name: "Custom Color", description: "Choose your brand colors", additionalCost: "+$10" },
+      ]
+    },
   ];
 
   // Active gift sequences for clients
@@ -169,6 +240,25 @@ const GiftAutomation = () => {
         { time: "1-Year", gift: "Premium Anniversary Gift", status: "Pending", date: "Feb 10, 2025" },
       ]
     },
+    {
+      id: "active4",
+      client: "Daniel Johnson",
+      property: "567 Market Street, New York, NY",
+      closingDate: "Jan 5, 2024",
+      sequence: "Branded Luxury Welcome",
+      status: [
+        { time: "At Closing", gift: "Branded Luxury Gift Box", status: "Delivered", date: "Jan 6, 2024" },
+        { time: "3-Month", gift: "Branded Thank You Card", status: "Scheduled", date: "Apr 5, 2024" },
+        { time: "6-Month", gift: "Branded Wine Set", status: "Pending", date: "Jul 5, 2024" },
+        { time: "1-Year", gift: "Premium Branded Anniversary Gift", status: "Pending", date: "Jan 5, 2025" },
+      ],
+      branded: true,
+      brandingDetails: {
+        logo: "https://placehold.co/100x100/5f0ef9/ffffff.png?text=DJ",
+        colors: ["#5f0ef9", "#ffffff"],
+        message: "Thank you for trusting us with your home purchase! - Daniel Johnson Realty"
+      }
+    }
   ];
 
   return (

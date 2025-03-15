@@ -14,6 +14,7 @@ export interface GiftSequence {
   price: string;
   included: GiftItem[];
   popular: boolean;
+  branded?: boolean;
 }
 
 export interface GiftOption {
@@ -24,6 +25,16 @@ export interface GiftOption {
   image: string;
   category: string;
   tags: string[];
+  brandable?: boolean;
+  brandingOptions?: BrandingOption[];
+}
+
+export interface BrandingOption {
+  id: string;
+  name: string;
+  description: string;
+  additionalCost: string;
+  previewImage?: string;
 }
 
 export interface ActiveSequence {
@@ -36,4 +47,10 @@ export interface ActiveSequence {
     status: "Delivered" | "Scheduled" | "Pending";
     date: string;
   }>;
+  branded?: boolean;
+  brandingDetails?: {
+    logo?: string;
+    colors?: string[];
+    message?: string;
+  };
 }
