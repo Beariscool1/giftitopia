@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
-import { ArrowRight, Check, Clock, Home, Gift } from "lucide-react";
+import { ArrowRight, Check, Clock, Heart, Gift } from "lucide-react";
 
 interface TestimonialPreview {
   name: string;
@@ -22,10 +22,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-8">
           <div className="md:w-1/2 space-y-6 z-10">
-            <div className="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent-foreground mb-2">
+            <div className="inline-block rounded-full bg-accent/20 px-3 py-1 text-sm font-medium text-accent-foreground mb-2">
               Build lasting client relationships
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-serif">
               Mindful closing gifts that leave lasting impressions
             </h1>
             <p className="text-xl text-muted-foreground max-w-md">
@@ -57,19 +57,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
                 ))}
               </div>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">500+</span> agents already using Bespoke Mindful Gifts
+                <span className="font-medium text-foreground">500+</span> agents already using Bestow Mindful Gifts
               </p>
             </div>
           </div>
           <div className="md:w-1/2 relative">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/30 rounded-full blur-3xl -z-10"></div>
             <GlassPanel 
               className="w-full h-full p-8 rounded-2xl shadow-soft overflow-hidden"
               intensity="medium"
             >
               <div className="relative h-full">
                 <div className="absolute top-0 right-0 w-28 h-28 bg-primary/5 rounded-full -mt-10 -mr-10"></div>
-                <div className="absolute bottom-0 left-0 w-36 h-36 bg-accent/5 rounded-full -mb-16 -ml-16"></div>
+                <div className="absolute bottom-0 left-0 w-36 h-36 bg-accent/10 rounded-full -mb-16 -ml-16"></div>
                 
                 <div className="relative z-10 bg-card border rounded-xl p-6 shadow-soft mb-6 transform transition-transform hover:-rotate-1 hover:scale-[1.01] duration-500">
                   <div className="flex items-center mb-4">
@@ -91,8 +91,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
                 
                 <div className="relative z-20 bg-card border rounded-xl p-6 shadow-soft mb-6 transform transition-transform hover:rotate-1 hover:scale-[1.01] duration-500 ml-6">
                   <div className="flex items-center mb-4">
-                    <div className="p-2 rounded-full bg-blue-50 mr-3">
-                      <Home className="h-5 w-5 text-blue-500" />
+                    <div className="p-2 rounded-full bg-accent/30 mr-3">
+                      <Heart className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Anniversary Gift • 1 Year</h3>
@@ -109,8 +109,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
                 
                 <div className="relative z-30 bg-card border rounded-xl p-6 shadow-soft transform transition-transform hover:-rotate-1 hover:scale-[1.01] duration-500 ml-12">
                   <div className="flex items-center mb-4">
-                    <div className="p-2 rounded-full bg-indigo-50 mr-3">
-                      <Gift className="h-5 w-5 text-indigo-500" />
+                    <div className="p-2 rounded-full bg-primary/10 mr-3">
+                      <Gift className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Gift Catalog</h3>
@@ -136,7 +136,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
       </div>
       
       <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary/5 rounded-full transform translate-x-1/2 -translate-y-1/2 blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full transform -translate-x-1/2 translate-y-1/2 blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full transform -translate-x-1/2 translate-y-1/2 blur-3xl -z-10"></div>
     </section>
   );
 };

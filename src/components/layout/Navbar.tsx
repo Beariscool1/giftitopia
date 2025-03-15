@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
-import { Gift, LayoutDashboard, Users, Menu, X, Home, Clock } from "lucide-react";
+import { Gift, LayoutDashboard, Users, Menu, X, Heart, Clock } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -47,10 +47,10 @@ const Navbar = () => {
           to="/" 
           className="flex items-center space-x-2 relative"
         >
-          <div className="bg-primary/10 p-2 rounded-xl">
-            <Home className="h-5 w-5 text-primary" />
+          <div className="bg-accent/50 p-2 rounded-xl">
+            <Heart className="h-5 w-5 text-primary" />
           </div>
-          <span className="font-bold text-xl tracking-tight">Bespoke Mindful Gifts</span>
+          <span className="font-serif font-bold text-xl tracking-tight">Bestow Mindful Gifts</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -61,9 +61,9 @@ const Navbar = () => {
               to={item.href}
               className={cn(
                 "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-                "hover:bg-secondary flex items-center",
+                "hover:bg-accent/20 flex items-center",
                 location.pathname === item.href
-                  ? "bg-secondary text-primary"
+                  ? "bg-accent/20 text-primary"
                   : "text-foreground/80"
               )}
             >
@@ -109,8 +109,8 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-3 rounded-md text-sm font-medium transition-colors flex items-center",
                   location.pathname === item.href
-                    ? "bg-secondary text-primary"
-                    : "hover:bg-secondary/50"
+                    ? "bg-accent/20 text-primary"
+                    : "hover:bg-accent/10"
                 )}
               >
                 {item.icon}
