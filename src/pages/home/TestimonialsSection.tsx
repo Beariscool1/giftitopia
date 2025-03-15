@@ -22,7 +22,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What real estate professionals are saying</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Hear from agents who have transformed their client relationships with Bespoke Mindful Gifts.
+            Hear from agents who have transformed their client relationships with Bestow Mindful Gifts.
           </p>
         </div>
         

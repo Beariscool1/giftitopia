@@ -13,7 +13,7 @@ const HowItWorksSection: React.FC = () => {
           <div className="inline-block rounded-full bg-background px-3 py-1 text-sm font-medium text-muted-foreground mb-4">
             Simple Process
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How Bespoke Mindful Gifts works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">How Bestow Mindful Gifts works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Three simple steps to transform your client relationships with thoughtful, automated gifting.
           </p>
@@ -24,7 +24,7 @@ const HowItWorksSection: React.FC = () => {
             number={1}
             title="Add your clients"
             description="Enter your client details and property information after each closing to start the gifting journey."
-            image="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-1.jpg"
             imageAlt="Add clients"
             features={["Easy client import", "CRM integration"]}
             showArrow
@@ -34,7 +34,7 @@ const HowItWorksSection: React.FC = () => {
             number={2}
             title="Select gift sequence"
             description="Choose a curated gift sequence that delivers the perfect gifts at closing, 3, 6, and 12 months after."
-            image="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-2.jpg"
             imageAlt="Select gifts"
             features={["Thoughtfully curated", "Customizable"]}
             showArrow
@@ -44,7 +44,7 @@ const HowItWorksSection: React.FC = () => {
             number={3}
             title="Let us handle the rest"
             description="We'll automatically deliver each gift at the perfect time while you build your business and client relationships."
-            image="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-3.jpg"
             imageAlt="Automated delivery"
             features={["Fully automated", "Delivery tracking"]}
             showArrow={false}

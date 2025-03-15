@@ -119,13 +119,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ testimonials, onHowItWorksCli
                   </div>
                   <div className="grid grid-cols-3 gap-2 mt-2">
                     <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      <img src="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-curated-gifts-1.jpg" alt="Gift" className="w-full h-full object-cover" />
                     </div>
                     <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1568213214202-aee0a28567f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      <img src="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-curated-gifts-2.jpg" alt="Gift" className="w-full h-full object-cover" />
                     </div>
                     <div className="h-12 rounded-md bg-secondary/80 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Gift" className="w-full h-full object-cover" />
+                      <img src="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-curated-gifts-3.jpg" alt="Gift" className="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>

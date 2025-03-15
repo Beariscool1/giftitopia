@@ -24,7 +24,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Gift className="h-6 w-6 text-primary" />}
             title="Closing Gift Sequences"
             description="Create lasting impressions with beautiful closing gifts followed by thoughtful follow-ups at 3, 6, and 12 months."
-            image="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-curated-gifts-1.jpg"
             alt="Closing gift"
           />
           
@@ -32,7 +32,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Clock className="h-6 w-6 text-primary" />}
             title="Smart Scheduling"
             description="Set-and-forget gift timing based on closing dates, with automatic tracking and delivery notifications."
-            image="https://images.unsplash.com/photo-1584208124218-703c2daf0008?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-subscription-page-header.jpg"
             alt="Smart scheduling"
           />
           
@@ -40,7 +40,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Users className="h-6 w-6 text-primary" />}
             title="Client Management"
             description="Organize all your client property purchases and track their gifting journey in one centralized dashboard."
-            image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-3.jpg"
             alt="Client management"
           />
           
@@ -48,7 +48,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Mail className="h-6 w-6 text-primary" />}
             title="Personalized Notes"
             description="Include handwritten-style notes with each gift that feel personal and authentic to strengthen connections."
-            image="https://images.unsplash.com/photo-1579208030886-b937da9925dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-mission-1.jpg"
             alt="Personalized notes"
           />
           
@@ -56,7 +56,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Package className="h-6 w-6 text-primary" />}
             title="Premium Gift Catalog"
             description="Select from thoughtfully curated gift options specifically chosen to delight new homeowners."
-            image="https://images.unsplash.com/photo-1568213214202-aee0a28567f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-our-curated-gifts-2.jpg"
             alt="Premium gift catalog"
           />
           
@@ -64,7 +64,7 @@ const FeaturesSection: React.FC = () => {
             icon={<Heart className="h-6 w-6 text-primary" />}
             title="Memorable Touchpoints"
             description="Create lasting connections that generate more referrals, reviews, and repeat business."
-            image="https://images.unsplash.com/photo-1513135467880-6c41603e3d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-reviews-1.jpg"
             alt="Memorable touchpoints"
           />
         </div>
