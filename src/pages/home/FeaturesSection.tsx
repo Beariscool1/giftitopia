@@ -1,5 +1,6 @@
+
 import React, { useState } from "react";
-import { Gift, Clock, Users, Mail, Package, Heart, ImageOff } from "lucide-react";
+import { Gift, Clock, Users, Mail, Package, Heart, Users as UsersIcon } from "lucide-react";
 
 const FeaturesSection: React.FC = () => {
   return (
@@ -83,7 +84,7 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, image, alt }) => {
   const [imageError, setImageError] = useState(false);
   
-  const fallbackImage = "https://images.unsplash.com/photo-1612103198005-b238154f4590?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+  const fallbackImage = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
   
   return (
     <div className="p-6 rounded-xl border bg-card transition-all duration-300 hover:shadow-soft hover:-translate-y-1" data-scroll>
@@ -104,7 +105,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, ima
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-secondary">
-            <ImageOff className="h-12 w-12 text-muted-foreground" />
+            <UsersIcon className="h-12 w-12 text-primary/70" />
           </div>
         )}
       </div>
