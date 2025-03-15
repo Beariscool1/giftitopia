@@ -111,7 +111,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
         <div className="mt-auto pt-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center text-sm text-muted-foreground mt-2 first:mt-0">
-              <Check className="text-green-500 mr-2 h-4 w-4" />
+              <Check className="text-primary mr-2 h-4 w-4" />
               <span>{feature}</span>
             </div>
           ))}
