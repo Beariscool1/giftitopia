@@ -1,6 +1,6 @@
 
-import React from "react";
-import { ArrowRight, Check } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, Check, ImageOff } from "lucide-react";
 
 const HowItWorksSection: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const HowItWorksSection: React.FC = () => {
             number={1}
             title="Add your clients"
             description="Enter your client details and property information after each closing to start the gifting journey."
-            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-1.jpg"
+            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageAlt="Add clients"
             features={["Easy client import", "CRM integration"]}
             showArrow
@@ -34,7 +34,7 @@ const HowItWorksSection: React.FC = () => {
             number={2}
             title="Select gift sequence"
             description="Choose a curated gift sequence that delivers the perfect gifts at closing, 3, 6, and 12 months after."
-            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-2.jpg"
+            image="https://images.unsplash.com/photo-1605338857441-eaa54a20b2ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageAlt="Select gifts"
             features={["Thoughtfully curated", "Customizable"]}
             showArrow
@@ -44,7 +44,7 @@ const HowItWorksSection: React.FC = () => {
             number={3}
             title="Let us handle the rest"
             description="We'll automatically deliver each gift at the perfect time while you build your business and client relationships."
-            image="https://www.bestowmindfulgifts.com/assets/images/bestow-mindful-gifts-how-it-works-3.jpg"
+            image="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageAlt="Automated delivery"
             features={["Fully automated", "Delivery tracking"]}
             showArrow={false}
@@ -74,6 +74,11 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
   features, 
   showArrow 
 }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  // Fallback image
+  const fallbackImage = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+  
   return (
     <div className="relative" data-scroll>
       <div className="bg-background rounded-xl p-8 h-full border relative z-10">
@@ -83,11 +88,25 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
           {description}
         </p>
         <div className="mt-4 h-40 rounded-lg overflow-hidden">
-          <img 
-            src={image} 
-            alt={imageAlt} 
-            className="w-full h-full object-cover"
-          />
+          {!imageError ? (
+            <img 
+              src={image} 
+              alt={imageAlt} 
+              className="w-full h-full object-cover"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <img 
+              src={fallbackImage}
+              alt={imageAlt} 
+              className="w-full h-full object-cover"
+              onError={() => (
+                <div className="w-full h-full flex items-center justify-center bg-secondary">
+                  <ImageOff className="h-12 w-12 text-muted-foreground" />
+                </div>
+              )}
+            />
+          )}
         </div>
         <div className="mt-auto pt-4">
           {features.map((feature, index) => (
